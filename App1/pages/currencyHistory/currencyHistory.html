@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>App2</title>
+    <link href="../../lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="../../lib/winjs-4.0.1/js/base.js"></script>
+    <script src="../../lib/winjs-4.0.1/js/ui.js"></script>
+    <link href="cHistory.css" rel="stylesheet" />
+    <script src="../currency/currency.js"></script>
+    <script src="currencyHistory.js"></script>
+</head>
+<body class="win-type-body">
+
+    <div data-win-control="WinJS.UI.AppBar" data-win-options="{placement:'top'}">
+        <button id="closeButton" data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'closeButton',
+            type: 'button',
+            label:'Close',
+            tooltip:'Close Application',
+            icon:'clear',
+            section:'primary'
+            }"></button>
+
+        <button id ="backButton" data-win-control="WinJS.UI.AppBarCommand" 
+                data-win-options="{id:'backButton',
+            type: 'button',
+            label:'Back',
+            tooltip:'Back to main Page',
+            icon:'back',
+            section:'primary'
+            }"></button>
+    </div>
+    <div id="mainGrid">
+        <div id="controlGrid">
+            <div class="col1">
+                <div class="row1">
+                    <label class="label" for="datePickerFrom">Date From</label>
+                    <div id="datePickerFrom" data-win-control="WinJS.UI.DatePicker" data-win-options="{minYear:2002}"></div>
+                </div>
+                <div class="row2">
+                    <label class="label" for="datePickerTo">Date To:</label>
+                    <div id="datePickerTo" data-win-control="WinJS.UI.DatePicker" data-win-options="{minYear:2002}"></div>
+                </div>
+            </div>
+            <div class="col2">
+                <div class="row1">
+                    <label class="label" for="currSelect">Currency:</label>
+                    <select id="currSelect"></select>
+                </div>
+                <div class="row2">
+                    <button id="buttonPlot">Plot</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="notifications">
+            <span id="messages" style="margin:3px;font-size:10px; font-weight:bold"></span>
+            <progress id="progressBar" value="20" max="100"></progress>
+        </div>
+        <div id="graphics">
+            <canvas id="canv" width="530" height="600"></canvas>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

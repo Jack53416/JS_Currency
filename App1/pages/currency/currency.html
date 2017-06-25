@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>App1</title>
+    <link href="../../lib/winjs-4.0.1/css/ui-light.css" rel="stylesheet" />
+    <script src="../../lib/winjs-4.0.1/js/base.js"></script>
+    <script src="../../lib/winjs-4.0.1/js/ui.js"></script>
+    <link href="currency.css" rel="stylesheet" />
+    <script src="currency.js"></script>
+</head>
+<body class="win-type-body">
+
+    <div data-win-control="WinJS.UI.AppBar"
+         data-win-options="{placement:'top'}">
+        <button id="closeButton" data-win-control="WinJS.UI.AppBarCommand"
+                data-win-options="{id:'closeButton',
+            type: 'button',
+            label:'Close',
+            tooltip:'CloseApp',
+            icon:'clear',
+            section:'primary'
+            }"></button>
+    </div>
+    <div id="mainGrid">
+        <div id="controls">
+            <button id="buttonDateDownload">Download Dates</button>
+            <div><span id="messages"></span></div>
+        </div>
+        <div id="listGrid">
+            <div id="list1">
+                <div class="datesListTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="dateText">
+                        <h4 class="win-h4" data-win-bind="textContent: date"></h4>
+                    </div>
+                </div>
+
+                <div id="dateList"
+                     class="win-selectionstylefilled listView"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                                                itemDataSource: CurrencyView.exchangeRates.dataSource,
+                                                itemTemplate: select('.datesListTemplate'),
+                                                selectionMode: 'single',
+                                                tapBehavior: 'directSelect',
+                                                layout: { type: WinJS.UI.ListLayout },
+                                        }">
+                </div>
+            </div>
+            <div id="list2">
+                <div class="exchangeListTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <img src="../../images/money.png" class="listIcon" />
+                    <div class="exchangeText">
+                        <h4 class="win-h4" style="text-decoration:underline; margin:5px" data-win-bind="textContent: currency"></h4>
+                        <h6 class="win-h6" style="color:deepskyblue" data-win-bind="textContent: code"></h6>
+                        <h6 class="win-h6" data-win-bind="textContent: mid"></h6>
+                    </div>
+                </div>
+
+                <div id="exList"
+                     class="win-selectionstylefilled listView"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                                                itemDataSource:  CurrencyView.ratesForCurrentDate.dataSource,
+                                                itemTemplate: select('.exchangeListTemplate'),
+                                                selectionMode: 'single',
+                                                tapBehavior: 'directSelect',
+                                                layout: { type: WinJS.UI.ListLayout }
+                                        }">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

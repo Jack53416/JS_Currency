@@ -1,0 +1,92 @@
+﻿body {
+}
+
+#mainGrid {
+    display: -ms-grid;
+    -ms-grid-rows: 130px 20px 1fr;
+    margin: 20px;
+    margin-top: 50px;
+    //height: 90%;
+    //width :90%;
+}
+
+#controlGrid {
+    -ms-grid-row: 1;
+    display: -ms-grid;
+    padding: 5px;
+    -ms-grid-columns: auto auto;
+    width: auto;
+    height: auto;
+}
+
+    #controlGrid .col1 .row1 {
+        -ms-grid-row: 1;
+    }
+
+    #controlGrid .col1 .row2 {
+        -ms-grid-row: 2;
+    }
+
+    #controlGrid .col2 .row1 {
+        -ms-grid-row: 1;
+    }
+
+    #controlGrid .col2 .row2 {
+        -ms-grid-row: 2;
+    }
+
+    #controlGrid .col1 {
+        -ms-grid-column: 1;
+        display: -ms-grid;
+        margin-right: 20px;
+        -ms-grid-rows: 1fr 1fr;
+    }
+
+    #controlGrid .col2 {
+        -ms-grid-column: 2;
+        margin-left: 20px;
+        display: -ms-grid;
+        -ms-grid-rows: 1fr 1fr;
+    }
+
+#notifications {
+    -ms-grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#graphics {
+    -ms-grid-row: 3;
+    width: 100%;
+    height: 100%;
+}
+
+#buttonPlot {
+    margin-top: 23px;
+    width: 150px;
+    height: 35px;
+}
+
+#currSelect {
+    width: 150px;
+    height: 30px;
+    margin-top: 5px;
+}
+
+#progressBar {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#canv {
+    width: 100%;
+    height: 90%;
+    margin-top: 5px;
+    border: solid 1px black;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: bold;
+}

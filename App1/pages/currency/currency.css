@@ -1,0 +1,71 @@
+﻿body {
+
+}
+
+#mainGrid {
+    display: -ms-grid;
+    -ms-grid-rows: 1fr 8fr;
+    margin: 20px;
+    margin-top: 50px;
+    //height: 100%;
+}
+
+#controls {
+    -ms-grid-row: 1;
+    width: auto;
+    height: auto;
+}
+
+#listGrid {
+    -ms-grid-row: 2;
+    display: -ms-grid;
+    -ms-grid-columns: 200px minmax(500px,700px);
+}
+
+#list1 {
+    -ms-grid-column: 1;
+    margin-right: 10px;
+}
+
+#list2 {
+    -ms-grid-column: 2;
+}
+
+.listView {
+    //height: 100%;
+    padding: 5px;
+    width: 100%;
+    height: 600px
+}
+
+.listIcon {
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    margin-right: 20px;
+}
+
+#list1 .dateText {
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+#messages {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: green;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+#buttonDateDownload{
+    width:auto;
+    height:35px;
+    margin:10px;
+}
