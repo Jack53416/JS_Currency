@@ -92,7 +92,6 @@
     }
     function loadState() {
         var loadedData = WinJS.Application.sessionState.currencyView;
-        var dateList = document.getElementById("dateList");
         //console.log(WinJS.Application.sessionState);
         if (loadedData)
         {
@@ -131,7 +130,7 @@
     }
     function downloadButtonClickHandler(e) {
         var url = "http://api.nbp.pl/api/exchangerates/tables/A/last/67/";
-        var xhr = WinJS.xhr({ url: url }).then(
+        WinJS.xhr({ url: url }).then(
             function (response) {
                 CurrencyView.clearExchangeRates();
                 var exchangeRateArr = JSON.parse(response.responseText);

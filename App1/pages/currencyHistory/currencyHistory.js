@@ -15,7 +15,6 @@
             WinJS.Utilities.query("#closeButton", element).listen("click",this._close.bind(this));
             
             var currOptions = document.getElementById("currSelect");
-            var option = document.createElement("option");
             if (WinJS.Navigation.state.options)
             {
                 for (var option of WinJS.Navigation.state.options)
@@ -44,7 +43,7 @@
     function downloadHistory() {
         var dateFrom = document.getElementById("datePickerFrom").winControl.current;
         var dateTo = document.getElementById("datePickerTo").winControl.current;
-        cSymbol = document.getElementById("currSelect").value;
+        var cSymbol = document.getElementById("currSelect").value;
 
         if (validateDates(dateFrom, dateTo) === true) {
             cHistoryView.rates.length = 0;
@@ -89,10 +88,10 @@
                 });*/
         });
 
-        downloading = WinJS.Promise.join(xhrs).then(
+        var downloading = WinJS.Promise.join(xhrs).then(
             function (files) {
                 for (var file in files) {
-                    content = JSON.parse(files[file].responseText);
+                    var content = JSON.parse(files[file].responseText);
                     for (var rate of content.rates) {
                         cHistoryView.rates.push({
                             date: new Date(rate.effectiveDate),
